@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        table {
+        border-collapse: collapse;
+        }
+        tr,
+        td {
+        border: 1px solid black;
+        }
+    </style>
+    <title>Document</title>
+    </head>
+<body>
+    <script lang="text/javascrip">
+        let data = "<table>";
+
+        for(var i=2;i<=9;i++){
+        data += ("<tr>");
+            for(var j=1;j<=10;j++){
+            //   data += ("<table>"+ i + "x" + j +"="+(i*j) + "</table>");
+            data += `<td>${i}x${j}=${i*j}</td>`
+            }
+            data += ("</tr>");
+        }
+        data += "</table>";
+        document.write(data)
+    </script>
+</body>
+</html>
