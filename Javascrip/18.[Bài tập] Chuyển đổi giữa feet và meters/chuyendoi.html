@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <table>
+        <th>
+          <input type="number" id="foot-meters" name="foot-meters" />
+        </th>
+        <th>
+          <select name="to" id="to">
+            <option value="foot">feet</option>
+            <option value="meters">meters</option>
+          </select>
+        </th>
+        <th>
+          <button type="button" onclick="convert()">convert</button>
+        </th>
+        <p>Result:<span id="result"></span></p>
+      </table>
+    </form>
+    <script>
+      const numberDOM = document.getElementById("foot-meters");
+      const toDOM = document.getElementById("to");
+
+      function footToMeter(foot) {
+        let meters = parseFloat(foot);
+        document.getElementById("result").innerHTML = 0.305 * meters;
+      }
+      function metToFoot(Meters) {
+        let feet = parseFloat(Meters);
+        document.getElementById("result").innerHTML = 3.279 * feet;
+      }
+
+      function convert() {
+        if (toDOM.value === "foot") {
+          footToMeter(numberDOM.value);
+        } else {
+          metToFoot(numberDOM.value);
+        }
+      }
+    </script>
+  </body>
+</html>
