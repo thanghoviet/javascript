@@ -25,9 +25,15 @@ class MyDate {
   setYear(year) {
     this.year = year;
   }
+  toString() {
+    return `${(this.day, this.month, this.year)}`;
+  }
 }
 var d = new MyDate();
 var n = d.toString();
-let date = new MyDate(2, 2, 2007);
+// console.log(d);
+// console.log(n);
+
+let date = new MyDate(2, 11, 2020);
 
 console.log(date);
