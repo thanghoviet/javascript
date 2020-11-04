@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="1368px"
+      height="768px"
+      style="border: 1px solid black"
+    ></canvas>
+
+    <script>
+      var ctx = document.getElementById("myCanvas").getContext("2d");
+      class Circle {
+        constructor(x, y, radius) {
+          this.x = x;
+          this.y = y;
+          this.radius = radius;
+        }
+        getRandomHex() {
+          return Math.floor(Math.random() * 255);
+        }
+        getRandomColor() {
+          var red = this.getRandomHex();
+          var green = this.getRandomHex();
+          var blue = this.getRandomHex();
+          return "rgb(" + red + "," + green + "," + blue + ")";
+        }
+        createCircle() {
+          var radius = Math.floor(Math.random() * 80);
+          var color = this.getRandomColor();
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+          ctx.fillStyle = color;
+          ctx.fill();
+        }
+      }
+      var circle = new Circle(500, 500, 80);
+      circle.getRandomColor();
+      circle.createCircle();
+    </script>
+  </body>
+</html>

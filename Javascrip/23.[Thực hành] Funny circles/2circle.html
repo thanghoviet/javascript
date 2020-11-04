@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="1368px"
+      height="768px"
+      style="border: 1px solid black"
+    ></canvas>
+    <script>
+      const canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+      class Circle {
+        constructor() {
+          this.updateRandomCircle();
+        }
+        updateRandomCircle() {
+          this.radius = Math.floor(Math.random() * 80) + 10;
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.color = this.getRandomColor();
+        }
+        getRandomHex() {
+          return Math.floor(Math.random() * 255);
+        }
+        getRandomColor() {
+          var red = this.getRandomHex();
+          var green = this.getRandomHex();
+          var blue = this.getRandomHex();
+          return "rgb(" + red + "," + green + "," + blue + ")";
+        }
+
+        createCircle() {
+          this.updateRandomCircle();
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+          ctx.fillStyle = this.color;
+          ctx.fill();
+        }
+      }
+      var circle = new Circle();
+      circle.createCircle();
+      //   var circle = new Circle(100, 200, 80);
+      circle.createCircle();
+    </script>
+  </body>
+</html>

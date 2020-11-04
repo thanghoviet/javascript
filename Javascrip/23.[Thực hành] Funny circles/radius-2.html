@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Funny Circle</title>
+  </head>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="1368px"
+      height="768px"
+      style="border: 1px solid black"
+    ></canvas>
+
+    <script>
+      var ctx = document.getElementById("myCanvas").getContext("2d");
+
+      class Circle {
+        constructor(x, y, radius) {
+          this.x = x;
+          this.y = y;
+          this.radius = radius;
+        }
+        getCircle() {
+          ctx.beginPath();
+          ctx.fillStyle = "white"; //màu hình tron
+          ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+          ctx.fill();
+          ctx.stroke(); //viền den
+        }
+      }
+
+      var circle = new Circle(500, 500, 80);
+      console.log(circle);
+      circle.getCircle();
+    </script>
+  </body>
+</html>
