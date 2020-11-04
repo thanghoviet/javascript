@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-size: 50px;
+      }
+    </style>
+    <title>chuyển đổi nhiệt độ</title>
+  </head>
+  <body>
+    <script>
+      class Temperature {
+        constructor(Celsius) {
+          this.Celsius = Celsius;
+        }
+        getFahrenheit() {
+          return 1.8 * this.Celsius + 32;
+        }
+        getKelvin() {
+          return this.Celsius + 273.15;
+        }
+      }
+      let temperature = new Temperature(25);
+      let Fahrenheit = temperature.getFahrenheit();
+      let Kelvin = temperature.getKelvin();
+      document.write("Fahrenheit:" + Fahrenheit + "</br>" + "Kelvin:" + Kelvin);
+    </script>
+  </body>
+</html>
